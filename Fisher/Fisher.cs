@@ -12,7 +12,7 @@ namespace Fisher
 {
     public partial class Fisher : Form
     {
-        SystemDecyzyjny system;
+        
 
         public Fisher()
         {
@@ -24,7 +24,7 @@ namespace Fisher
         {
             var wczytaj = ofdDaneWczytaj.ShowDialog();
             if (wczytaj != DialogResult.OK) return;
-            system = new SystemDecyzyjny(ofdDaneWczytaj.FileName);
+            var system = new SystemDecyzyjny(ofdDaneWczytaj.FileName);
             rtbPrzedSeleckja.Text = system.systemDeczyzyjnyTekst;
             tBLiczbaAtrybutów.Maximum = system.iloscAtrybutow;
             gBoxWyniki.Enabled = true;
